@@ -121,13 +121,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -194,7 +194,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-30 15:59:10" itemprop="dateModified" datetime="2024-01-30T15:59:10+08:00">2024-01-30</time>
+      <time title="修改时间：2024-01-31 13:08:37" itemprop="dateModified" datetime="2024-01-31T13:08:37+08:00">2024-01-31</time>
     </span>
 
   
@@ -208,7 +208,205 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>xk贴贴</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2118922225&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=2118922225&amp;auto=1&amp;height=66">
+</iframe>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/29/Problem%201/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/walle.jpg">
+      <meta itemprop="name" content="张文权">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="test">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | test">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2024/01/29/Problem%201/" class="post-title-link" itemprop="url">Problem 1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-01-29 18:36:57" itemprop="dateCreated datePublished" datetime="2024-01-29T18:36:57+08:00">2024-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-31 13:11:09" itemprop="dateModified" datetime="2024-01-31T13:11:09+08:00">2024-01-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Homework/" itemprop="url" rel="index"><span itemprop="name">Homework</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="probmem-1">Probmem 1</h2>
+<h3 id="a">(a)</h3>
+<p>从任意一个点开始进行DFS， 对于每一个节点 u 我们纪录 dp[u]
+表示以当前节点到子孙节点的最远距离以及 f[u] 表示以 u
+为根的树中所有路径的最大长度。</p>
+<p>对于任意遍历到的节点 u 假设它的子节点为 <span
+class="math inline">\(v_1.v_2....\)</span> , 对应的权重为 <span
+class="math inline">\(w_1,w_2...\)</span></p>
+<p>那么 <span class="math inline">\(dp[u] = \max \left (
+0,d[v_1]+w_1,d[v_2]+w_2 \cdots \right)\)</span> , $f[u] =
+u的最长路径+次长路径长 $</p>
+<p>最终结果 $ res = ( f[u] )$</p>
+<p>用dfs并且每个节点只对直接子节点进行有限次遍历，复杂度为 O(n)</p>
+<h3 id="b">(b)</h3>
+<p>完全类似的使用树形DP，只不过改变更新的逻辑：</p>
+<p><span class="math inline">\(dp[u] =w(u)+ \max \left ( 0,d[v_1],d[v_2]
+\cdots \right)\)</span> , $f[u] =-w(u)+ u的最长路径+次长路径长 $</p>
+<h2 id="probmem-2">Probmem 2</h2>
+<p><span class="math inline">\(DP[i][j]\)</span> 表示形式为 <span
+class="math inline">\(s[\cdots i]\)</span> 和 <span
+class="math inline">\(s[j \dots ]\)</span> 的最长对称串长度。<span
+class="math inline">\(0\le i,j \le n\)</span></p>
+<p>dp初始化为 0</p>
+<p><span class="math inline">\(dp[i][j] = 1+dp[i-1][j+1]\)</span> 当
+$s[i] = s[j] $</p>
+<p><span class="math inline">\(dp[i][j] = 0\)</span> 当 $s[i] != s[j]
+$</p>
+<p>最后遍历dp数组得到最大值即可</p>
+<p>复杂度为<span class="math inline">\(O(n^2)\)</span></p>
+<h2 id="problem-3">Problem 3</h2>
+<p><span class="math inline">\(\sum c_im_i \le B\)</span> ,最大化 <span
+class="math inline">\(\prod \left ( 1-(1-r_i)^{m_i} \right)\)</span></p>
+<p>用<span class="math inline">\(dp[i][b]\)</span>
+表示在预算为b的情况下完成前 i 个步骤成功的最大可能性</p>
+<p><span class="math inline">\(dp[0][0 \cdots B]\)</span> = 1</p>
+<p><span class="math inline">\(dp[i][b] = \max \left\{1-
+(1-dp[i-1][b-c_i\cdot k])*(1-r_i)^k \right \}\)</span>, <span
+class="math inline">\(k=1 \cdots b/c_i\)</span></p>
+<p>最后 <span class="math inline">\(dp[n][B]\)</span> 即为结果，同时用
+<span class="math inline">\(m[i][b]\)</span> 纪录第 i
+个设备在b预算的数量，</p>
+<p>最后 $m_n = m[n][b],m_{n-1} = m[n-1][b-c_n*m_n]$</p>
+<p>复杂度为<span class="math inline">\(O(n^3)\)</span></p>
+<h2 id="problem-4">Problem 4</h2>
+<p>定义 <span class="math inline">\(dp[i][j][k]\)</span> = true 如果前 i
+个数可以找到两个不相交集合，和分别为$ j, k$</p>
+<p><span class="math inline">\(dp[][0][0]\)</span> 初始化为true</p>
+<p>$dp[i][j][k] = dp[i-1][j][k] dp[i-1][j-a_i][k]dp[i-1][k][k-a_i] $</p>
+<p>算法复杂度为 <span class="math inline">\(O(nS^2)\)</span> 其中 <span
+class="math inline">\(S=\sum a_l\)</span></p>
+<p>不行，这个问题的复杂度无论用参数 n 还是 S
+，都不能保证另一个是多项式规模的，也就不能保证复杂度是多项式规模</p>
+<h2 id="problem-i.1">Problem I.1</h2>
+<p>假设我们有两个MT M1,M2 可以在<span class="math inline">\(O(n^{k_1}),
+O(n^{k_2})\)</span> 解决 <span class="math inline">\(L_1,L_2\)</span>
+那么对于</p>
+<p><span class="math inline">\(L_1 \cup L_2\)</span> 和<span
+class="math inline">\(L_1 \cap L_2\)</span> ：解决两个问题复杂度为 <span
+class="math inline">\(O(n^{k_1})+O(n^{k_2})=O(n^{\max k_1,k_2})\)</span>
+属于P</p>
+<p><span class="math inline">\(L_1  L_2\)</span>
+：按顺序两个问题复杂度为 <span
+class="math inline">\(O(n^{k_1})+O(n^{k_2})=O(n^{\max k_1,k_2})\)</span>
+属于P</p>
+<p><span class="math inline">\(\bar L\)</span> :
+我们仅仅改变对问题的判定方式，这并不会影响解决问题的算法和时间</p>
+<p><span class="math inline">\(L^*\)</span>
+:类似的，我们解决这些问题的时间一定是多项式的</p>
+<h2 id="problem-i.2">Problem I.2</h2>
+<ol type="a">
+<li></li>
+</ol>
+<p>如果一个问题可以很快解决，我们可以很快的判断这个问题的反例是否存在，所以
+P = coNP</p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p>可以证明它的逆否命题：</p>
+<p><span class="math inline">\(P=NP \Rightarrow NP = coNP\)</span></p>
+<p>如果 P=NP, 那么</p>
+<ol type="1">
+<li>对于所有 <span class="math inline">\(L \in NP\)</span> ， 那么 $ L
+P$ , 因为 P 的封闭性, <span class="math inline">\(\bar L \in P\)</span>
+因此 $ L coNP$</li>
+<li>对于所有 <span class="math inline">\(L \in coNP\)</span> ， 那么
+<span class="math inline">\(\bar L \in P\)</span> , 因为 P 的封闭性, $ L
+P$ 因此 <span class="math inline">\(L \in P\)</span></li>
+</ol>
+<p>因此 NP = coNP，原命题得证</p>
+<h2 id="problem-i.3">Problem I.3</h2>
+<p>首先证明这是一个NP问题：</p>
+<p>计算矩阵乘法<span class="math inline">\(Ax\)</span> 需要 <span
+class="math inline">\(O(mn)\)</span> ,与 b 比较 需要<span
+class="math inline">\(O(m)\)</span> 因此可以在多项式时间验证</p>
+<p>接下来证明这是一个NP-hard问题</p>
+<p>我们可以说明3-SAT问题可以等效为这个问题的一个特例，构造如下：</p>
+<p>假设一个布尔表达式有 v 个变量 和 c 行，我们构造一个 <span
+class="math inline">\(c\times v\)</span> 的矩阵A 定义如下 <span
+class="math display">\[
+a_{i,j}=\begin{cases}
+-1 \qquad j变量 出现在第i行且没有取反 \\
+1 \qquad j变量 出现在第i行且取反 \\
+0  \qquad j变量 没有在第i行
+\end{cases}
+\]</span> 然后构造 <span class="math display">\[
+b_i=-1+\sum_{j=1}^v max(0,a_{ij})
+\]</span> 对应 bool值和x <span class="math display">\[
+x_j = \begin{cases}
+1 \qquad 变量 j = true\\
+0 \qquad 变量 j = false
+\end{cases}
+\]</span> 由此当布尔表达式为真等价于<span class="math inline">\(Ax \le
+b\)</span> 因此这个问题复杂性高于3-SAT问题</p>
 
       
     </div>
@@ -295,7 +493,6 @@
     <div class="post-body" itemprop="articleBody">
           <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br></pre></td></tr></table></figure>
 
-
       
     </div>
 
@@ -359,6 +556,12 @@
   
 
 
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
 
 
