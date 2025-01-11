@@ -37,3 +37,5 @@ a & b \\
 c & d
 \end{bmatrix}
 $$
+
+![](../../images/capoo.jpg)

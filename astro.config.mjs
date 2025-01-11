@@ -5,6 +5,7 @@ import rehypeKatex from 'rehype-katex';
 import preact from '@astrojs/preact';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
+import vue from '@astrojs/vue';
 // import content from 'astro-content';
 // https://astro.build/config
 export default defineConfig({
@@ -14,5 +15,5 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex],
   },
-  integrations: [preact(), mdx(), react()],
+  integrations: [preact(), mdx(), react(), vue()],
 });
