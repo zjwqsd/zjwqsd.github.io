@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import { coerce } from 'astro:schema';
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true })).concat(Object.values(import.meta.glob('../posts/*.mdx', { eager: true })));
+
+  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+  // console.log(uniqueTags);
+  //[ 'astro', 'blogging', 'learning in public', 'successes', undefined ]
+
+  return uniqueTags.map((tag) => {
+    if (tag === undefined) {
+      //返回没有标签的文章
+      const undefinedPosts = allPosts.filter((post: any) => {
+        const tags = post.frontmatter?.tags || [];
+        return tags.length === 0;
+      });
+      return {
+        params: { tag: 'undefined' },
+        props: { posts: undefinedPosts },
+      };
+    }
+
+
+    // console.log(tag);
+    const filteredPosts = allPosts.filter((post: any) => {
+  // 确保 frontmatter 和 tags 都存在，并且 tags 是一个数组
+      const tags = post.frontmatter?.tags || [];
+      return tags.includes(tag);
+    });
+    // console.log(filteredPosts.length);
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+  
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<!-- console.log(tag); -->
+<BaseLayout pageTitle={tag}>
+  <p>
+    {tag === "undefined" ? (
+      '未分类的文章'
+    ) : (
+      `包含「${tag}」标签的文章`
+    )}
+  </p>
+  <ul>
+    {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+  </ul>
+</BaseLayout>

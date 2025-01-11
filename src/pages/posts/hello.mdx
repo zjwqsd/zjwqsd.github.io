@@ -1,0 +1,142 @@
+---
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Hello加公式版'
+pubDate: 2022-07-01
+description: 'Hello加公式版。'
+author: 'Astro 学习者'
+image:
+    url: 'https://docs.astro.build/assets/rose.webp'
+    alt: 'The Astro logo on a dark background with a pink glow.'
+tags: ["astro", "blogging", "learning in public"]
+---
+import Greeting from '../../components/Greeting';
+import AsciinemaPlayer from '../../components/AsciinemaPlayer.astro';
+
+Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+
+## Quick Start
+
+### Create a new post
+
+``` bash
+$ hexo new "My New Post"
+```
+
+More info: [Writing](https://hexo.io/docs/writing.html)
+
+### Run server
+
+``` bash
+$ hexo server
+```
+
+More info: [Server](https://hexo.io/docs/server.html)
+
+### Generate static files
+
+``` bash
+$ hexo generate
+```
+
+More info: [Generating](https://hexo.io/docs/generating.html)
+
+### Deploy to remote sites
+
+``` bash
+$ hexo deploy
+```
+
+More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+$$
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+$$
+
+$$
+\begin{align}
+\sqrt{A}
+\sqrt{B}
+\end{align}
+$$
+内联公式$\sqrt{A} $
+## 你好
+### 你好
+
+#### 你好
+###### 你好
+
+
+```c
+// 你的代码
+int main(){
+    printf("Hello World!");
+    return 0;
+}
+
+```
+
+```bash
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@latest/build/styles/vs2015.min.css">
+
+```
+
+```c
+int main()
+```
+
+
+
+## 傅里叶矩阵
+因为一些原因，我们选择在单位根处采样，记 $\omega_n$ 为 n 次单位根, 在$[\omega^0,\omega,\omega_2,\cdots\omega^{n-1}] $ 采样得到傅里叶矩阵：
+$$
+F=
+\begin{bmatrix}
+1&1&1&\cdots &1\\
+1&\omega&\omega^2&\cdots &\omega^{n-1}\\
+1&\omega^2&\omega^3&\cdots &\omega^{2(n-1)}\\
+\vdots&&&\ddots\\
+1&\omega^{n-1}&\omega^{2(n-1)}&\cdots &\omega^{(n-1)^2}
+\end{bmatrix}
+$$
+
+对于 n 为偶数的情况，我们可以利用傅里叶矩阵的性质，如果 n 为偶数，$ \omega ^{n/2} = -1 $
+
+由单位根的性质，如果 n 为偶数，$\omega ^{n/2} = -1$  
+
+
+即
+$$
+\begin{align}
+F_{n/2}PF_{n/2} \\
+F_{n/2}PF_{n/2}
+\end{align}
+$$
+
+$$
+\text{公式}
+$$
+
+
+
+😊
+
+# 本地录屏示例
+
+以下是一个 Asciinema 本地录屏文件的嵌入：
+
+
+
+
+<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+<AsciinemaPlayer castname="nonebot" />
+
+
+
+
+
+
+
+
+

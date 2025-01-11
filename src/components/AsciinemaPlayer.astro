@@ -1,0 +1,41 @@
+---
+const { castname } = Astro.props;
+console.log(castname);
+// const filename = '/casts/' + {castname} + '.cast';
+// console.log(filename);
+---
+
+
+<asciinemaPlayer data-castname={castname}>
+  <div id={castname}></div>
+</asciinemaPlayer>
+
+<script is:inline src="/asciinema-player/asciinema-player.min.js"></script>
+
+<script is:inline >
+    // 确保 initializeAsciinemaPlayer 函数在加载时正确绑定
+    window.initializeAsciinemaPlayer = function() {
+    console.log("Asciinema Player Initialized");
+
+    // 你可以在这里进一步配置 AsciinemaPlayer，例如
+    const castname = document.querySelector('asciinemaPlayer').dataset.castname;
+    const filename = '/casts/' + castname + '.cast';
+
+    // 确保 AsciinemaPlayer.create 被正确调用
+    AsciinemaPlayer.create(filename, document.getElementById(castname), {
+      // 你可以在这里设置一些初始化选项
+      speed: 1,            // 控制播放速度
+      loop: true,          // 是否循环播放
+      autoplay: true,      // 是否自动播放
+      theme: 'light',      // 设置主题：light 或 dark
+      cols: 80,            // 控制终端宽度（列数）
+      rows: 24,            // 控制终端高度（行数）
+    });
+  };
+  // DOM 加载完成后触发初始化
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeAsciinemaPlayer();
+  });
+  
+  
+</script>
