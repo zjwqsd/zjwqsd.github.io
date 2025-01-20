@@ -6,6 +6,8 @@ import preact from '@astrojs/preact';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import vue from '@astrojs/vue';
+import pagefind from "astro-pagefind";
+// import pa
 // import content from 'astro-content';
 // https://astro.build/config
 export default defineConfig({
@@ -15,5 +17,5 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [rehypeKatex],
   },
-  integrations: [preact(), mdx(), react(), vue()],
+  integrations: [preact(), mdx(), react(), vue(),pagefind()],
 });
