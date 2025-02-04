@@ -22,12 +22,16 @@ tags:
 
 ## 下一步计划
 
-我将完成 Astro 教程，然后继续编写更多内容。关注我以获取更多信息。
+123
 
-1231313
+我将完成 Astro 教程，然后继续编写更多内容。关注我以获取更多信息。
 
 $$ \\sqrt\{A\} $$ $$ \\bra\{A\} \\ket\{x\} $$
 
+&nbsp;
+
 $$ \\begin\{bmatrix\} a & b \\ c & d \\end\{bmatrix\} $$
+
+&nbsp;
 
 ![](../../images/capoo.jpg)
